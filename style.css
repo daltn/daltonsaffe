@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap");
+
+body {
+  width: 800px;
+  margin: 0 auto;
+  background-color: #121212;
+  color: #fff;
+  font-family: "Nunito Sans", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.film-burn {
+  width: 100%;
+}
