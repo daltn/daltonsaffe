@@ -34,7 +34,11 @@ a:hover {
   text-decoration: underline;
 }
 
+p {
+  margin: 10px 0;
+}
+
 .photos {
   width: 100%;
-  margin: 5% 0;
+  margin: 10px 0;
 }
