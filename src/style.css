@@ -272,3 +272,9 @@ h2 a {
 .pager a {
   margin: 0;
 }
+
+/* ---------- email list ---------- */
+
+.email-list p {
+  max-width: 360px;
+}
