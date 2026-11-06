@@ -42,3 +42,40 @@ p {
   width: 100%;
   margin: 10px 0;
 }
+
+.email-form {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.email-form input[type="email"] {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  border: 1px solid #121212;
+  padding: 4px 8px;
+  outline: none;
+  background: #fff;
+  color: #121212;
+  flex: 1;
+  max-width: 200px;
+}
+
+.email-form input[type="email"]::placeholder {
+  color: #888;
+}
+
+.email-form button {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  background: none;
+  border: 1px solid #121212;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: #121212;
+}
+
+.email-form button:hover {
+  background: #121212;
+  color: #fff;
+}
