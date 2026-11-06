@@ -16,7 +16,7 @@
     <meta property="og:image" content="{{ pageImage }}" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/png" href="/img/favicon.png" />
-    <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — journal" href="/feed.xml" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — blog" href="/feed.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -29,7 +29,7 @@
     <div class="container">
       <nav class="site-nav">
         <a href="/" class="name"{% if page.url == "/" %} aria-current="page"{% endif %}>dalton saffe</a>
-        {%- for item in [["journal", "/journal/"], ["paintings", "/paintings/"], ["photos", "/photos/"]] %}
+        {%- for item in [["blog", "/blog/"], ["paintings", "/paintings/"], ["photos", "/photos/"]] %}
         <span aria-hidden="true">·</span>
         <a href="{{ item[1] }}"{% if page.url.startsWith(item[1]) %} aria-current="page"{% endif %}>{{ item[0] }}</a>
         {%- endfor %}

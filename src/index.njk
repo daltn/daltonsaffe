@@ -12,7 +12,7 @@ layout: base.njk
 
 {%- if collections.posts.length %}
 <section>
-  <h2><a href="/journal/">journal</a></h2>
+  <h2><a href="/blog/">blog</a></h2>
   <ul class="post-list">
     {%- for post in collections.posts | reverse | head(3) %}
     <li>

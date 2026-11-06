@@ -9,9 +9,9 @@ npm install
 npm start        # http://localhost:8080, reloads on save
 ```
 
-## Add a journal post
+## Add a blog post
 
-Create `src/journal/posts/YYYY-MM-DD-some-slug.md`:
+Create `src/blog/posts/YYYY-MM-DD-some-slug.md`:
 
 ```md
 ---
@@ -24,7 +24,7 @@ draft: true   # optional: shows locally, hidden on the live site
 Write in Markdown. Images, links and embeds (SoundCloud iframes etc.) all work.
 ```
 
-The date comes from the filename. The URL is `/journal/some-slug/`. Posts also go into `/feed.xml`.
+The date comes from the filename. The URL is `/blog/some-slug/`. Posts also go into `/feed.xml`.
 
 ## Add a painting
 

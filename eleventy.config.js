@@ -48,10 +48,10 @@ export default function (eleventyConfig) {
     return item.slug || eleventyConfig.getFilter("slugify")(item.title);
   });
 
-  // Journal posts: newest first. Set `draft: true` to keep a post off the live site.
+  // Blog posts: newest first. Set `draft: true` to keep a post off the live site.
   eleventyConfig.addCollection("posts", (api) =>
     api
-      .getFilteredByGlob("src/journal/posts/*.md")
+      .getFilteredByGlob("src/blog/posts/*.md")
       .filter((p) => !(p.data.draft && process.env.ELEVENTY_RUN_MODE === "build"))
   );
 
@@ -61,7 +61,7 @@ export default function (eleventyConfig) {
     collection: { name: "posts", limit: 20 },
     metadata: {
       language: "en",
-      title: `${site.title} — journal`,
+      title: `${site.title} — blog`,
       subtitle: site.description,
       base: site.url + "/",
       author: { name: site.title },

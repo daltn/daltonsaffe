@@ -1,7 +1,7 @@
 {
   "name": "daltonsaffe",
   "version": "1.0.0",
-  "description": "daltonsaffe.com — journal, paintings, photos",
+  "description": "daltonsaffe.com — blog, paintings, photos",
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy"
