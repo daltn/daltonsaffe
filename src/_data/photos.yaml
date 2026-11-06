@@ -1,0 +1,16 @@
+# Photo series. Each series gets its own page at /photos/<slug>/.
+#
+# Fields:
+#   title        (required)
+#   description  optional paragraph
+#   year         optional
+#   cover        optional Cloudinary ID for the index page (defaults to the first photo)
+#   featured     optional: true shows the cover on the home page
+#   photos       list of { image, alt, caption }
+
+- title: gr
+  year: 2025
+  featured: true
+  photos:
+    - image: 0039_2_Large_nyqu3f
+      alt: gr

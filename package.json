@@ -1,0 +1,18 @@
+{
+  "name": "daltonsaffe",
+  "version": "1.0.0",
+  "description": "daltonsaffe.com — blog, paintings, photos",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "author": "Dalton Saffe",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "@11ty/eleventy-plugin-rss": "^3.1.0",
+    "js-yaml": "^5.5.0"
+  },
+  "type": "module",
+  "private": true
+}

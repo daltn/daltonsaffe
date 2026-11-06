@@ -1,0 +1,32 @@
+---
+layout: base.njk
+pagination:
+  data: paintings
+  size: 1
+  alias: painting
+permalink: "/paintings/{{ painting | itemSlug }}/"
+eleventyComputed:
+  title: "{{ painting.title }}"
+  ogImage: "{{ painting.image }}"
+  description: "{{ painting.title }}{% if painting.year %}, {{ painting.year }}{% endif %}{% if painting.medium %}, {{ painting.medium }}{% endif %}"
+---
+<figure class="work">
+  {% img painting.image, painting.title, "(min-width: 800px) 640px, 100vw", "", false %}
+  <figcaption>
+    <p><em>{{ painting.title }}</em>{% if painting.year %}, {{ painting.year }}{% endif %}</p>
+    {%- if painting.medium or painting.size %}
+    <p class="muted">{{ [painting.medium, painting.size] | select | join(", ") }}</p>
+    {%- endif %}
+    {%- if painting.notes %}<p>{{ painting.notes }}</p>{% endif %}
+    {%- if painting.status == "available" %}
+    <p><a href="mailto:{{ site.email }}?subject={{ ('Inquiry: ' + painting.title) | urlencode }}">available — inquire</a></p>
+    {%- elif painting.status == "sold" %}
+    <p class="muted">sold</p>
+    {%- endif %}
+  </figcaption>
+</figure>
+<nav class="pager">
+  {%- if pagination.href.previous %}<a href="{{ pagination.href.previous }}">← previous</a>{% else %}<span></span>{% endif %}
+  <a href="/paintings/">all paintings</a>
+  {%- if pagination.href.next %}<a href="{{ pagination.href.next }}">next →</a>{% else %}<span></span>{% endif %}
+</nav>

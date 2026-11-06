@@ -1,0 +1,280 @@
+body {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  color: #121212;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 12px;
+}
+
+.container {
+  margin: 5% 10%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+a {
+  color: #f46b1c;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.photos {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.email-form {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.email-form input[type="email"] {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  border: 1px solid #121212;
+  padding: 4px 8px;
+  outline: none;
+  background: #fff;
+  color: #121212;
+  flex: 1;
+  max-width: 200px;
+}
+
+.email-form input[type="email"]::placeholder {
+  color: #888;
+}
+
+.email-form button {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  background: none;
+  border: 1px solid #121212;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: #121212;
+}
+
+.email-form button:hover {
+  background: #121212;
+  color: #fff;
+}
+
+/* ---------- layout ---------- */
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 30px;
+}
+
+.site-nav a {
+  margin: 0;
+}
+
+.site-nav .name {
+  color: #121212;
+}
+
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+}
+
+main section {
+  margin: 0 0 30px;
+}
+
+h1,
+h2 {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+h2 a {
+  color: inherit;
+}
+
+.muted {
+  color: #888;
+}
+
+/* ---------- blog ---------- */
+
+.post-list li {
+  display: flex;
+  gap: 12px;
+}
+
+.post-list time {
+  color: #888;
+  min-width: 80px;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-list a {
+  margin: 0;
+}
+
+.post {
+  max-width: 560px;
+}
+
+.post header {
+  margin: 0 0 20px;
+}
+
+.post header h1 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.post header time {
+  color: #888;
+}
+
+.post-cover {
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+.post-body {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.post-body p,
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1em;
+}
+
+.post-body ul,
+.post-body ol {
+  list-style: revert;
+  padding-left: 1.5em;
+}
+
+.post-body h2,
+.post-body h3 {
+  font-size: 14px;
+  margin: 1.6em 0 0.6em;
+}
+
+.post-body img,
+.post-body iframe,
+.post-body video {
+  max-width: 100%;
+}
+
+.post-body blockquote {
+  margin: 0 0 1em;
+  padding-left: 12px;
+  border-left: 1px solid #121212;
+}
+
+.post footer {
+  margin: 30px 0 0;
+}
+
+/* ---------- galleries ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.grid a {
+  display: block;
+  margin: 0;
+  color: #121212;
+}
+
+.grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #f2f2f2;
+}
+
+.grid .caption {
+  display: block;
+  margin-top: 6px;
+}
+
+.grid a:hover .caption {
+  text-decoration: underline;
+}
+
+.work,
+.photo {
+  margin: 0 0 20px;
+}
+
+.work img,
+.photo img,
+.featured img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work figcaption p {
+  margin: 4px 0;
+}
+
+.work figcaption {
+  margin-top: 10px;
+}
+
+.photo figcaption {
+  margin-top: 6px;
+}
+
+.featured li {
+  margin: 0 0 10px;
+}
+
+.featured a {
+  display: block;
+  margin: 0;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 0;
+}
+
+.pager a {
+  margin: 0;
+}
+
+/* ---------- email list ---------- */
+
+.email-list p {
+  max-width: 360px;
+}
