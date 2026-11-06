@@ -29,7 +29,7 @@
     <div class="container">
       <nav class="site-nav">
         <a href="/" class="name"{% if page.url == "/" %} aria-current="page"{% endif %}>dalton saffe</a>
-        {%- for item in [["blog", "/blog/"], ["paintings", "/paintings/"], ["photos", "/photos/"]] %}
+        {%- for item in [["blog", "/blog/"], ["paintings", "/paintings/"], ["photos", "/photos/"], ["subscribe", "/subscribe/"]] %}
         <span aria-hidden="true">·</span>
         <a href="{{ item[1] }}"{% if page.url.startsWith(item[1]) %} aria-current="page"{% endif %}>{{ item[0] }}</a>
         {%- endfor %}
