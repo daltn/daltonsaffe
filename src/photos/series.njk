@@ -1,0 +1,26 @@
+---
+layout: base.njk
+pagination:
+  data: photos
+  size: 1
+  alias: series
+permalink: "/photos/{{ series | itemSlug }}/"
+eleventyComputed:
+  title: "{{ series.title }}"
+  ogImage: "{{ series.cover or series.photos[0].image }}"
+---
+<header class="series-header">
+  <h1 class="page-title">{{ series.title }}{% if series.year %}, {{ series.year }}{% endif %}</h1>
+  {%- if series.description %}<p>{{ series.description }}</p>{% endif %}
+</header>
+{%- for photo in series.photos %}
+<figure class="photo">
+  {% img photo.image, photo.alt or series.title, "(min-width: 800px) 640px, 100vw", "", not loop.first %}
+  {%- if photo.caption %}<figcaption class="muted">{{ photo.caption }}</figcaption>{% endif %}
+</figure>
+{%- endfor %}
+<nav class="pager">
+  {%- if pagination.href.previous %}<a href="{{ pagination.href.previous }}">← previous</a>{% else %}<span></span>{% endif %}
+  <a href="/photos/">all photos</a>
+  {%- if pagination.href.next %}<a href="{{ pagination.href.next }}">next →</a>{% else %}<span></span>{% endif %}
+</nav>

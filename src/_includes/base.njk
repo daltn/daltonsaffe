@@ -1,0 +1,42 @@
+{%- set pageTitle = (title + " — " + site.title) if title else site.title -%}
+{%- set pageDescription = description or site.description -%}
+{%- set pageImage = (ogImage or site.defaultImage) | imageUrl(1200) -%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ pageDescription }}" />
+    <link rel="canonical" href="{{ page.url | fullUrl }}" />
+    <meta property="og:type" content="{{ ogType or 'website' }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ pageDescription }}" />
+    <meta property="og:url" content="{{ page.url | fullUrl }}" />
+    <meta property="og:image" content="{{ pageImage }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }} — journal" href="/feed.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="site-nav">
+        <a href="/" class="name"{% if page.url == "/" %} aria-current="page"{% endif %}>dalton saffe</a>
+        {%- for item in [["journal", "/journal/"], ["paintings", "/paintings/"], ["photos", "/photos/"]] %}
+        <span aria-hidden="true">·</span>
+        <a href="{{ item[1] }}"{% if page.url.startsWith(item[1]) %} aria-current="page"{% endif %}>{{ item[0] }}</a>
+        {%- endfor %}
+      </nav>
+      <main>
+        {{ content | safe }}
+      </main>
+    </div>
+  </body>
+</html>

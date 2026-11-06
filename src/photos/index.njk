@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: photos
+---
+<h1 class="page-title">photos</h1>
+{% if photos.length %}
+<ul class="grid">
+  {%- for s in photos %}
+  <li>
+    <a href="/photos/{{ s | itemSlug }}/">
+      {% img s.cover or s.photos[0].image, s.title, "(min-width: 800px) 200px, (min-width: 500px) 33vw, 100vw" %}
+      <span class="caption">{{ s.title }}{% if s.year %}, {{ s.year }}{% endif %}</span>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+{% else %}
+<p class="muted">coming soon.</p>
+{% endif %}

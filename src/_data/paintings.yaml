@@ -1,0 +1,23 @@
+# Paintings, in the order they appear on /paintings/ (put the newest first).
+#
+# Fields:
+#   title     (required)
+#   image     (required) Cloudinary public ID, e.g. 0039_2_Large_nyqu3f,
+#             or a full image URL
+#   year, medium, size     shown under the image
+#   notes     optional paragraph on the painting's own page
+#   status    optional: "available" adds an "inquire" link, "sold" shows sold
+#   featured  optional: true shows it on the home page
+#   slug      optional: custom URL, otherwise made from the title
+#
+# Example:
+#
+# - title: Untitled (Blue)
+#   image: my_cloudinary_id
+#   year: 2026
+#   medium: oil on canvas
+#   size: 24 × 30 in
+#   status: available
+#   featured: true
+
+[]

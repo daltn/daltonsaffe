@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: paintings
+---
+<h1 class="page-title">paintings</h1>
+{% if paintings.length %}
+<ul class="grid">
+  {%- for p in paintings %}
+  <li>
+    <a href="/paintings/{{ p | itemSlug }}/">
+      {% img p.image, p.title, "(min-width: 800px) 200px, (min-width: 500px) 33vw, 100vw" %}
+      <span class="caption">{{ p.title }}{% if p.year %}, {{ p.year }}{% endif %}</span>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+{% else %}
+<p class="muted">coming soon.</p>
+{% endif %}

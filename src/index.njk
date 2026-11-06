@@ -1,0 +1,41 @@
+---
+layout: base.njk
+---
+<section class="intro">
+  <p>{{ site.description }}</p>
+  <ul>
+    <li><a href="mailto:{{ site.email }}" target="_blank" rel="noopener">contact</a></li>
+    <li><a href="{{ site.soundcloud }}" target="_blank" rel="noopener">music</a></li>
+  </ul>
+  {% include "signup.njk" %}
+</section>
+
+{%- if collections.posts.length %}
+<section>
+  <h2><a href="/journal/">journal</a></h2>
+  <ul class="post-list">
+    {%- for post in collections.posts | reverse | head(3) %}
+    <li>
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+{%- set featuredPaintings = paintings | featured %}
+{%- set featuredPhotos = photos | featured %}
+{%- if featuredPaintings.length or featuredPhotos.length %}
+<section>
+  <h2>work</h2>
+  <ul class="featured">
+    {%- for p in featuredPaintings %}
+    <li><a href="/paintings/{{ p | itemSlug }}/">{% img p.image, p.title, "(min-width: 800px) 640px, 100vw", "", not loop.first %}</a></li>
+    {%- endfor %}
+    {%- for s in featuredPhotos %}
+    <li><a href="/photos/{{ s | itemSlug }}/">{% img s.cover or s.photos[0].image, s.title, "(min-width: 800px) 640px, 100vw", "", (featuredPaintings.length or not loop.first) %}</a></li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
