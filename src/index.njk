@@ -9,12 +9,6 @@ layout: base.njk
   </ul>
 </section>
 
-<section class="email-list">
-  <h2><a href="/subscribe/">email list</a></h2>
-  <p>{{ site.emailListBlurb }}</p>
-  {% include "signup.njk" %}
-</section>
-
 {%- if collections.posts.length %}
 <section>
   <h2><a href="/blog/">blog</a></h2>
@@ -44,3 +38,9 @@ layout: base.njk
   </ul>
 </section>
 {%- endif %}
+
+<section class="email-list">
+  <h2><a href="/subscribe/">email list</a></h2>
+  <p>{{ site.emailListBlurb }}</p>
+  {% include "signup.njk" %}
+</section>
