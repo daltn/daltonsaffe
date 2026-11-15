@@ -1,9 +1,18 @@
+:root {
+  color-scheme: dark;
+  --bg: #121212;
+  --fg: #ededed;
+  --muted: #8a8a8a;
+  --accent: #f46b1c;
+  --surface: #1e1e1e;
+}
+
 body {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  background-color: #fff;
-  color: #121212;
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
@@ -25,7 +34,7 @@ li {
 }
 
 a {
-  color: #f46b1c;
+  color: var(--accent);
   text-decoration: none;
   margin: 10px 0;
 }
@@ -52,32 +61,32 @@ p {
 .email-form input[type="email"] {
   font-family: "Inter", sans-serif;
   font-size: 12px;
-  border: 1px solid #121212;
+  border: 1px solid var(--fg);
   padding: 4px 8px;
   outline: none;
-  background: #fff;
-  color: #121212;
+  background: var(--bg);
+  color: var(--fg);
   flex: 1;
   max-width: 200px;
 }
 
 .email-form input[type="email"]::placeholder {
-  color: #888;
+  color: var(--muted);
 }
 
 .email-form button {
   font-family: "Inter", sans-serif;
   font-size: 12px;
   background: none;
-  border: 1px solid #121212;
+  border: 1px solid var(--fg);
   padding: 4px 10px;
   cursor: pointer;
-  color: #121212;
+  color: var(--fg);
 }
 
 .email-form button:hover {
-  background: #121212;
-  color: #fff;
+  background: var(--fg);
+  color: var(--bg);
 }
 
 /* ---------- layout ---------- */
@@ -94,7 +103,7 @@ p {
 }
 
 .site-nav .name {
-  color: #121212;
+  color: var(--fg);
 }
 
 .site-nav a[aria-current="page"] {
@@ -117,7 +126,7 @@ h2 a {
 }
 
 .muted {
-  color: #888;
+  color: var(--muted);
 }
 
 /* ---------- blog ---------- */
@@ -128,7 +137,7 @@ h2 a {
 }
 
 .post-list time {
-  color: #888;
+  color: var(--muted);
   min-width: 80px;
   font-variant-numeric: tabular-nums;
 }
@@ -151,7 +160,7 @@ h2 a {
 }
 
 .post header time {
-  color: #888;
+  color: var(--muted);
 }
 
 .post-cover {
@@ -191,7 +200,7 @@ h2 a {
 .post-body blockquote {
   margin: 0 0 1em;
   padding-left: 12px;
-  border-left: 1px solid #121212;
+  border-left: 1px solid var(--fg);
 }
 
 .post footer {
@@ -209,7 +218,7 @@ h2 a {
 .grid a {
   display: block;
   margin: 0;
-  color: #121212;
+  color: var(--fg);
 }
 
 .grid img {
@@ -217,7 +226,7 @@ h2 a {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  background: #f2f2f2;
+  background: var(--surface);
 }
 
 .grid .caption {
