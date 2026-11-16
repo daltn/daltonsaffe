@@ -142,16 +142,20 @@ p {
   box-shadow: none;
 }
 
+/* EmailOctopus colors these with `color: var(--text-colour) !important` (near-black),
+   so set that variable and win with a more specific !important. */
 .email-form-embed .inline-container[data-form] .emailoctopus-success-message,
 .email-form-embed .inline-container[data-form] .emailoctopus-error-message {
+  --text-colour: var(--fg);
   margin: 0;
   font-size: 14px;
   text-align: left;
-  color: var(--fg);
+  color: var(--fg) !important;
 }
 
 .email-form-embed .inline-container[data-form] .emailoctopus-error-message {
-  color: var(--accent);
+  --text-colour: var(--accent);
+  color: var(--accent) !important;
 }
 
 .email-form-embed .inline-container[data-form] .text-center {
