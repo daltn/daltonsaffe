@@ -4,15 +4,21 @@
   "description": "daltonsaffe.com — blog, art",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "preview": "eleventy && wrangler dev",
+    "deploy": "eleventy && wrangler deploy"
   },
   "author": "Dalton Saffe",
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.8",
     "@11ty/eleventy-plugin-rss": "^3.1.0",
-    "js-yaml": "^5.5.0"
+    "js-yaml": "^5.5.0",
+    "wrangler": "^4.162.0"
   },
   "type": "module",
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=22.12"
+  }
 }
