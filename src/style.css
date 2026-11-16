@@ -242,7 +242,6 @@ h2 a {
 .portrait {
   display: block;
   margin: 0 0 16px;
-  image-rendering: pixelated;
 }
 
 .work,
