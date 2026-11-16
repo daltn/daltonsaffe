@@ -37,7 +37,6 @@ Upload the image to Cloudinary, then add an entry to the top of `src/_data/paint
   medium: oil on canvas
   size: 24 × 30 in
   status: available   # adds an "inquire" link; or "sold"
-  featured: true      # shows on the home page
 ```
 
 ## Add photos

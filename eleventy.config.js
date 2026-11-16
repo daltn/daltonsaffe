@@ -42,7 +42,24 @@ export default function (eleventyConfig) {
   );
   eleventyConfig.addFilter("isoDate", (date) => new Date(date).toISOString().slice(0, 10));
   eleventyConfig.addFilter("head", (arr, n) => (Array.isArray(arr) ? arr.slice(0, n) : []));
-  eleventyConfig.addFilter("featured", (arr) => (arr || []).filter((x) => x.featured));
+  // Every image on the art page (each painting and every photo in every series),
+  // with the page it links to. The home page picks one at random on each visit.
+  eleventyConfig.addFilter("artPool", function (paintings = [], photos = []) {
+    const slug = eleventyConfig.getFilter("itemSlug").bind(this);
+    const entry = (id, alt, href) => ({
+      href,
+      alt: alt || "",
+      src: imageUrl(id, 1200),
+      srcset: /^https?:\/\//.test(id) ? "" : WIDTHS.map((w) => `${imageUrl(id, w)} ${w}w`).join(", "),
+    });
+    return [
+      ...(paintings || []).map((p) => entry(p.image, p.title, `/art/paintings/${slug(p)}/`)),
+      ...(photos || []).flatMap((s) =>
+        (s.photos || []).map((ph) => entry(ph.image, ph.alt || s.title, `/art/photos/${slug(s)}/`))
+      ),
+    ].filter((x) => x.src);
+  });
+
   // stable slug for data-driven pages: explicit `slug`, else slugified title
   eleventyConfig.addFilter("itemSlug", function (item) {
     return item.slug || eleventyConfig.getFilter("slugify")(item.title);

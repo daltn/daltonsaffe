@@ -7,7 +7,6 @@
 #   year, medium, size     shown under the image
 #   notes     optional paragraph on the painting's own page
 #   status    optional: "available" adds an "inquire" link, "sold" shows sold
-#   featured  optional: true shows it on the home page
 #   slug      optional: custom URL, otherwise made from the title
 #
 # Example:
@@ -18,7 +17,6 @@
 #   medium: oil on canvas
 #   size: 24 × 30 in
 #   status: available
-#   featured: true
 
 - title: Power Amplifier
   image: https://images.daltonsaffe.com/IMG_0964.webp

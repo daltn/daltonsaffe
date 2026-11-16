@@ -251,7 +251,7 @@ h2 a {
 
 .work img,
 .photo img,
-.featured img {
+.home-art img {
   display: block;
   width: 100%;
   height: auto;
@@ -269,11 +269,8 @@ h2 a {
   margin-top: 6px;
 }
 
-.featured li {
-  margin: 0 0 10px;
-}
 
-.featured a {
+.home-art {
   display: block;
   margin: 0;
 }
