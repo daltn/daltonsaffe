@@ -1,13 +1,22 @@
 # Dalton Saffe
 
-Source for [daltonsaffe.com](https://daltonsaffe.com). It's a static site built with [Eleventy](https://www.11ty.dev/) and deployed on Netlify.
+Source for [daltonsaffe.com](https://daltonsaffe.com). It's a static site built with [Eleventy](https://www.11ty.dev/) and hosted on [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/) as static files.
 
 ## Run locally
+
+Needs Node 22.12 or newer (`nvm use` picks it up from `.nvmrc`).
 
 ```sh
 npm install
 npm start        # http://localhost:8080, reloads on save
+npm run preview  # build, then serve it the way Cloudflare does (http://localhost:8787)
 ```
+
+## Deploy
+
+Pushing to `main` deploys automatically: Cloudflare runs `npm run build`, then `npx wrangler deploy`, which uploads `_site/` using the settings in `wrangler.jsonc`. Pull requests get their own preview URL.
+
+To deploy by hand instead: `npx wrangler login` once, then `npm run deploy`.
 
 ## Add a blog post
 
