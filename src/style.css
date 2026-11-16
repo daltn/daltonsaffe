@@ -239,6 +239,12 @@ h2 a {
   text-decoration: underline;
 }
 
+.portrait {
+  display: block;
+  margin: 0 0 16px;
+  image-rendering: pixelated;
+}
+
 .work,
 .photo {
   margin: 0 0 20px;
