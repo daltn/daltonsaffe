@@ -67,7 +67,7 @@ p {
   --field-border-colour: var(--fg);
   --label-colour: var(--fg);
   --button-colour: transparent;
-  --button-text-colour: var(--fg);
+  --button-text-colour: var(--accent);
   --eo-form-font-color: var(--fg);
 }
 
@@ -127,17 +127,17 @@ p {
 .email-form-embed .inline-container[data-form] .btn-primary {
   width: auto;
   padding: 4px 10px;
-  border: 1px solid var(--fg);
+  border: 1px solid var(--accent);
   background: none;
-  color: var(--fg);
+  color: var(--accent);
   font-weight: 400;
   cursor: pointer;
 }
 
 .email-form-embed .inline-container[data-form] .btn-primary:hover,
 .email-form-embed .inline-container[data-form] .btn-primary:focus {
-  border-color: var(--fg);
-  background: var(--fg);
+  border-color: var(--accent);
+  background: var(--accent);
   color: var(--bg);
   box-shadow: none;
 }
@@ -158,40 +158,9 @@ p {
   text-align: left;
 }
 
+/* Hide the "Powered by EmailOctopus" line and badge. */
 .email-form-embed .inline-container[data-form] .mastfoot {
-  margin: 6px 0 0;
-  padding: 0;
-  background: none;
-}
-
-.email-form-embed .inline-container[data-form] .mastfoot {
-  display: block;
-}
-
-/* Keep the "Powered by EmailOctopus" text but drop the logo badge. */
-.email-form-embed .inline-container[data-form] .mastfoot p {
-  margin: 0;
-  padding: 0;
-  height: auto;
-  border: 0;
-  background: none;
-  font: 400 11px/1.4 "Inter", sans-serif;
-  text-align: left;
-  text-indent: 0;
-  white-space: normal;
-  overflow: visible;
-  color: var(--muted);
-}
-
-.email-form-embed .inline-container[data-form] .mastfoot a {
-  position: static;
-  font-size: 11px;
-  font-weight: 400;
-  color: var(--muted);
-}
-
-.email-form-embed .inline-container[data-form] .mastfoot a:hover {
-  text-decoration: underline;
+  display: none !important;
 }
 
 /* ---------- layout ---------- */
