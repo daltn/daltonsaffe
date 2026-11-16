@@ -1,0 +1,56 @@
+---
+layout: base.njk
+---
+{%- if collections.posts.length %}
+<section>
+  <h2><a href="/blog/">blog</a></h2>
+  <ul class="post-list">
+    {%- for post in collections.posts | reverse | head(3) %}
+    <li>
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
+
+{%- set art = paintings | artPool(photos) %}
+{%- if art.length %}
+{%- set first = art[0] %}
+<section>
+  <h2><a href="/art/">art</a></h2>
+  {#- Picked in the browser so it changes on every visit; the noscript
+      fallback shows the first image when JavaScript is off. #}
+  <a class="home-art" id="home-art" hidden></a>
+  <script>
+    (function () {
+      var art = {{ art | dump | safe }};
+      var pick = art[Math.floor(Math.random() * art.length)];
+      var link = document.getElementById("home-art");
+      var img = document.createElement("img");
+      img.alt = pick.alt;
+      img.decoding = "async";
+      if (pick.srcset) {
+        img.sizes = "(min-width: 800px) 640px, 100vw";
+        img.srcset = pick.srcset;
+      }
+      img.src = pick.src;
+      link.href = pick.href;
+      link.appendChild(img);
+      link.hidden = false;
+    })();
+  </script>
+  <noscript>
+    <a href="{{ first.href }}" class="home-art">
+      <img src="{{ first.src }}"{% if first.srcset %} srcset="{{ first.srcset }}" sizes="(min-width: 800px) 640px, 100vw"{% endif %} alt="{{ first.alt }}">
+    </a>
+  </noscript>
+</section>
+{%- endif %}
+
+<section class="email-list">
+  <h2><a href="/subscribe/">email list</a></h2>
+  <p>{{ site.emailListBlurb }}</p>
+  {% include "signup.njk" %}
+</section>

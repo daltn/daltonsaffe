@@ -1,0 +1,10 @@
+{#- EmailOctopus embedded form. Set `emailOctopusForm` in src/_data/site.json to the
+    form's ID (EmailOctopus → Forms → your form → Get the code: the part after /form/
+    and before .js). EmailOctopus doesn't allow the same form twice on one page. #}
+<div class="email-form-embed">
+  {%- if site.emailOctopusForm %}
+  <script async src="https://eomail5.com/form/{{ site.emailOctopusForm }}.js" data-form="{{ site.emailOctopusForm }}"></script>
+  {%- else %}
+  <p class="muted">Signup is coming soon. Until then, <a href="mailto:{{ site.email }}?subject=Add%20me%20to%20the%20email%20list">email me</a> and I'll add you.</p>
+  {%- endif %}
+</div>

@@ -1,0 +1,394 @@
+:root {
+  color-scheme: dark;
+  --bg: #121212;
+  --fg: #ededed;
+  --muted: #8a8a8a;
+  --accent: #a070e6;
+  --surface: #1e1e1e;
+}
+
+body {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.container {
+  margin: 5% 10%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 10px 0;
+}
+
+.photos {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* EmailOctopus embedded form (src/_includes/signup.njk), restyled to match the site.
+   Selectors are kept more specific than EmailOctopus's own so these win. */
+.email-form-embed .inline-container[data-form] {
+  max-width: 360px !important; /* EmailOctopus sets 600px !important */
+  margin: 10px 0;
+  padding: 0;
+  background: none;
+}
+
+.email-form-embed .inline-container[data-form] .emailoctopus-form {
+  --field-colour: var(--bg);
+  --field-border-colour: var(--fg);
+  --label-colour: var(--fg);
+  --button-colour: transparent;
+  --button-text-colour: var(--accent);
+  --eo-form-font-color: var(--fg);
+}
+
+.email-form-embed .inline-container[data-form] .emailoctopus-form-wrapper {
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.email-form-embed .inline-container[data-form] .main-form {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.email-form-embed .inline-container[data-form] .main-form [eo-form-fields-container] {
+  flex: 1;
+}
+
+.email-form-embed .inline-container[data-form] .main-form .btn {
+  flex: 0 0 auto;
+}
+
+.email-form-embed .inline-container[data-form] .main-form .emailoctopus-form-row,
+.email-form-embed .inline-container[data-form] .main-form .btn {
+  margin: 0;
+}
+
+.email-form-embed .inline-container[data-form] .form-control,
+.email-form-embed .inline-container[data-form] .btn-primary {
+  height: auto;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.email-form-embed .inline-container[data-form] .form-control {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid var(--fg);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.email-form-embed .inline-container[data-form] .form-control:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.email-form-embed .inline-container[data-form] .form-control::placeholder {
+  color: var(--muted);
+}
+
+.email-form-embed .inline-container[data-form] .btn-primary {
+  width: auto;
+  padding: 4px 10px;
+  border: 1px solid var(--accent);
+  background: none;
+  color: var(--accent);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.email-form-embed .inline-container[data-form] .btn-primary:hover,
+.email-form-embed .inline-container[data-form] .btn-primary:focus {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: none;
+}
+
+.email-form-embed .inline-container[data-form] .emailoctopus-success-message,
+.email-form-embed .inline-container[data-form] .emailoctopus-error-message {
+  margin: 0;
+  font-size: 14px;
+  text-align: left;
+  color: var(--fg);
+}
+
+.email-form-embed .inline-container[data-form] .emailoctopus-error-message {
+  color: var(--accent);
+}
+
+.email-form-embed .inline-container[data-form] .text-center {
+  text-align: left;
+}
+
+/* Hide the "Powered by EmailOctopus" line and badge. */
+.email-form-embed .inline-container[data-form] .mastfoot {
+  display: none !important;
+}
+
+/* ---------- layout ---------- */
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 30px;
+}
+
+.site-nav a {
+  margin: 0;
+}
+
+.site-nav .name {
+  color: var(--fg);
+}
+
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+}
+
+main section {
+  margin: 0 0 30px;
+}
+
+h1,
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+h2 a {
+  color: inherit;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* ---------- blog ---------- */
+
+.post-list li {
+  display: flex;
+  gap: 12px;
+}
+
+.post-list time {
+  color: var(--muted);
+  min-width: 80px;
+  font-variant-numeric: tabular-nums;
+}
+
+.post-list a {
+  margin: 0;
+}
+
+.post {
+  max-width: 560px;
+}
+
+.post header {
+  margin: 0 0 20px;
+}
+
+.post header h1 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.post header time {
+  color: var(--muted);
+}
+
+.post-cover {
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+.post-body {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.post-body p,
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1em;
+}
+
+.post-body ul,
+.post-body ol {
+  list-style: revert;
+  padding-left: 1.5em;
+}
+
+.post-body h2,
+.post-body h3 {
+  font-size: 14px;
+  margin: 1.6em 0 0.6em;
+}
+
+.post-body img,
+.post-body iframe,
+.post-body video {
+  max-width: 100%;
+}
+
+.post-body blockquote {
+  margin: 0 0 1em;
+  padding-left: 12px;
+  border-left: 1px solid var(--fg);
+}
+
+.post footer {
+  margin: 30px 0 0;
+}
+
+/* ---------- galleries ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.grid a {
+  display: block;
+  margin: 0;
+  color: var(--fg);
+}
+
+.grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.grid .caption {
+  display: block;
+  margin-top: 6px;
+}
+
+.grid a:hover .caption {
+  text-decoration: underline;
+}
+
+.portrait {
+  display: block;
+  margin: 0 0 16px;
+}
+
+.work,
+.photo {
+  margin: 0 0 20px;
+}
+
+.work img,
+.photo img,
+.home-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work figcaption p {
+  margin: 4px 0;
+}
+
+.work figcaption {
+  margin-top: 10px;
+}
+
+.photo figcaption {
+  margin-top: 6px;
+}
+
+
+.home-art {
+  display: block;
+  margin: 0;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0 0;
+}
+
+.pager a {
+  margin: 0;
+}
+
+/* ---------- email list ---------- */
+
+.email-list p {
+  max-width: 360px;
+}
+
+/* ---------- art ---------- */
+
+.section-nav {
+  display: flex;
+  gap: 6px;
+  margin: 0 0 20px;
+}
+
+.section-nav a {
+  margin: 0;
+}
+
+.art-section {
+  margin: 0 0 40px;
+  scroll-margin-top: 20px;
+}
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  margin: 40px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--surface);
+}
+
+.site-footer a {
+  margin: 0;
+}

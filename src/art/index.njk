@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: art
+description: Paintings and photos by Dalton Saffe.
+---
+<h1 class="page-title">art</h1>
+<nav class="section-nav" aria-label="art sections">
+  <a href="#paintings">paintings</a>
+  <span aria-hidden="true">·</span>
+  <a href="#photos">photos</a>
+  <span aria-hidden="true">·</span>
+  <a href="{{ site.soundcloud }}" target="_blank" rel="noopener">music ↗</a>
+</nav>
+
+<section id="paintings" class="art-section">
+  <h2>paintings</h2>
+  {%- if paintings.length %}
+  <ul class="grid">
+    {%- for p in paintings %}
+    <li>
+      <a href="/art/paintings/{{ p | itemSlug }}/">
+        {% img p.image, p.title, "(min-width: 800px) 200px, (min-width: 500px) 33vw, 100vw" %}
+        <span class="caption">{{ p.title }}{% if p.year %}, {{ p.year }}{% endif %}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="muted">coming soon.</p>
+  {%- endif %}
+</section>
+
+<section id="photos" class="art-section">
+  <h2>photos</h2>
+  {%- if photos.length %}
+  <ul class="grid">
+    {%- for s in photos %}
+    <li>
+      <a href="/art/photos/{{ s | itemSlug }}/">
+        {% img s.cover or s.photos[0].image, s.title, "(min-width: 800px) 200px, (min-width: 500px) 33vw, 100vw" %}
+        <span class="caption">{{ s.title }}{% if s.year %}, {{ s.year }}{% endif %}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="muted">coming soon.</p>
+  {%- endif %}
+</section>
