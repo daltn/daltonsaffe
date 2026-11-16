@@ -4,7 +4,7 @@ pagination:
   data: paintings
   size: 1
   alias: painting
-permalink: "/paintings/{{ painting | itemSlug }}/"
+permalink: "/art/paintings/{{ painting | itemSlug }}/"
 eleventyComputed:
   title: "{{ painting.title }}"
   ogImage: "{{ painting.image }}"
@@ -27,6 +27,6 @@ eleventyComputed:
 </figure>
 <nav class="pager">
   {%- if pagination.href.previous %}<a href="{{ pagination.href.previous }}">← previous</a>{% else %}<span></span>{% endif %}
-  <a href="/paintings/">all paintings</a>
+  <a href="/art/#paintings">all paintings</a>
   {%- if pagination.href.next %}<a href="{{ pagination.href.next }}">next →</a>{% else %}<span></span>{% endif %}
 </nav>

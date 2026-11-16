@@ -287,3 +287,20 @@ h2 a {
 .email-list p {
   max-width: 360px;
 }
+
+/* ---------- art ---------- */
+
+.section-nav {
+  display: flex;
+  gap: 6px;
+  margin: 0 0 20px;
+}
+
+.section-nav a {
+  margin: 0;
+}
+
+.art-section {
+  margin: 0 0 40px;
+  scroll-margin-top: 20px;
+}

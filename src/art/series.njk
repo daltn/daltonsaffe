@@ -4,7 +4,7 @@ pagination:
   data: photos
   size: 1
   alias: series
-permalink: "/photos/{{ series | itemSlug }}/"
+permalink: "/art/photos/{{ series | itemSlug }}/"
 eleventyComputed:
   title: "{{ series.title }}"
   ogImage: "{{ series.cover or series.photos[0].image }}"
@@ -21,6 +21,6 @@ eleventyComputed:
 {%- endfor %}
 <nav class="pager">
   {%- if pagination.href.previous %}<a href="{{ pagination.href.previous }}">← previous</a>{% else %}<span></span>{% endif %}
-  <a href="/photos/">all photos</a>
+  <a href="/art/#photos">all photos</a>
   {%- if pagination.href.next %}<a href="{{ pagination.href.next }}">next →</a>{% else %}<span></span>{% endif %}
 </nav>

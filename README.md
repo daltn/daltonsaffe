@@ -28,7 +28,7 @@ The date comes from the filename. The URL is `/blog/some-slug/`. Posts also go i
 
 ## Add a painting
 
-Upload the image to Cloudinary, then add an entry to the top of `src/_data/paintings.yaml` (all fields are explained at the top of that file):
+Upload the image to Cloudinary, then add an entry to the top of `src/_data/paintings.yaml` (all fields are explained at the top of that file). It appears in the paintings section of `/art/` and gets its own page at `/art/paintings/<slug>/`:
 
 ```yaml
 - title: Untitled (Blue)
@@ -42,7 +42,7 @@ Upload the image to Cloudinary, then add an entry to the top of `src/_data/paint
 
 ## Add photos
 
-Add a series, or more photos to an existing one, in `src/_data/photos.yaml`.
+Add a series, or more photos to an existing one, in `src/_data/photos.yaml`. Each series appears in the photos section of `/art/` and gets its own page at `/art/photos/<slug>/`.
 
 ## Images
 
