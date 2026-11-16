@@ -13,7 +13,7 @@ eleventyComputed:
 <figure class="work">
   {% img painting.image, painting.title, "(min-width: 800px) 640px, 100vw", "", false %}
   <figcaption>
-    <p><em>{{ painting.title }}</em>{% if painting.year %}, {{ painting.year }}{% endif %}</p>
+    <p>{{ painting.title }}{% if painting.year %}, {{ painting.year }}{% endif %}</p>
     {%- if painting.medium or painting.size %}
     <p class="muted">{{ [painting.medium, painting.size] | select | join(", ") }}</p>
     {%- endif %}
