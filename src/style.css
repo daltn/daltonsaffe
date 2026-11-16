@@ -53,41 +53,145 @@ p {
   margin: 10px 0;
 }
 
-.email-form {
-  display: flex;
-  gap: 6px;
+/* EmailOctopus embedded form (src/_includes/signup.njk), restyled to match the site.
+   Selectors are kept more specific than EmailOctopus's own so these win. */
+.email-form-embed .inline-container[data-form] {
+  max-width: 360px !important; /* EmailOctopus sets 600px !important */
   margin: 10px 0;
+  padding: 0;
+  background: none;
 }
 
-.email-form input[type="email"] {
+.email-form-embed .inline-container[data-form] .emailoctopus-form {
+  --field-colour: var(--bg);
+  --field-border-colour: var(--fg);
+  --label-colour: var(--fg);
+  --button-colour: transparent;
+  --button-text-colour: var(--fg);
+  --eo-form-font-color: var(--fg);
+}
+
+.email-form-embed .inline-container[data-form] .emailoctopus-form-wrapper {
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+.email-form-embed .inline-container[data-form] .main-form {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.email-form-embed .inline-container[data-form] .main-form [eo-form-fields-container] {
+  flex: 1;
+}
+
+.email-form-embed .inline-container[data-form] .main-form .btn {
+  flex: 0 0 auto;
+}
+
+.email-form-embed .inline-container[data-form] .main-form .emailoctopus-form-row,
+.email-form-embed .inline-container[data-form] .main-form .btn {
+  margin: 0;
+}
+
+.email-form-embed .inline-container[data-form] .form-control,
+.email-form-embed .inline-container[data-form] .btn-primary {
+  height: auto;
   font-family: "Inter", sans-serif;
   font-size: 14px;
-  border: 1px solid var(--fg);
-  padding: 4px 8px;
-  outline: none;
-  background: var(--bg);
-  color: var(--fg);
-  flex: 1;
-  max-width: 200px;
+  line-height: 1.4;
+  border-radius: 0;
+  box-shadow: none;
 }
 
-.email-form input[type="email"]::placeholder {
+.email-form-embed .inline-container[data-form] .form-control {
+  width: 100%;
+  padding: 4px 8px;
+  border: 1px solid var(--fg);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.email-form-embed .inline-container[data-form] .form-control:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.email-form-embed .inline-container[data-form] .form-control::placeholder {
   color: var(--muted);
 }
 
-.email-form button {
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  background: none;
-  border: 1px solid var(--fg);
+.email-form-embed .inline-container[data-form] .btn-primary {
+  width: auto;
   padding: 4px 10px;
+  border: 1px solid var(--fg);
+  background: none;
+  color: var(--fg);
+  font-weight: 400;
   cursor: pointer;
+}
+
+.email-form-embed .inline-container[data-form] .btn-primary:hover,
+.email-form-embed .inline-container[data-form] .btn-primary:focus {
+  border-color: var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+  box-shadow: none;
+}
+
+.email-form-embed .inline-container[data-form] .emailoctopus-success-message,
+.email-form-embed .inline-container[data-form] .emailoctopus-error-message {
+  margin: 0;
+  font-size: 14px;
+  text-align: left;
   color: var(--fg);
 }
 
-.email-form button:hover {
-  background: var(--fg);
-  color: var(--bg);
+.email-form-embed .inline-container[data-form] .emailoctopus-error-message {
+  color: var(--accent);
+}
+
+.email-form-embed .inline-container[data-form] .text-center {
+  text-align: left;
+}
+
+.email-form-embed .inline-container[data-form] .mastfoot {
+  margin: 6px 0 0;
+  padding: 0;
+  background: none;
+}
+
+.email-form-embed .inline-container[data-form] .mastfoot {
+  display: block;
+}
+
+/* Keep the "Powered by EmailOctopus" text but drop the logo badge. */
+.email-form-embed .inline-container[data-form] .mastfoot p {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  border: 0;
+  background: none;
+  font: 400 11px/1.4 "Inter", sans-serif;
+  text-align: left;
+  text-indent: 0;
+  white-space: normal;
+  overflow: visible;
+  color: var(--muted);
+}
+
+.email-form-embed .inline-container[data-form] .mastfoot a {
+  position: static;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.email-form-embed .inline-container[data-form] .mastfoot a:hover {
+  text-decoration: underline;
 }
 
 /* ---------- layout ---------- */
