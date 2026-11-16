@@ -380,3 +380,15 @@ h2 a {
   margin: 0 0 40px;
   scroll-margin-top: 20px;
 }
+
+/* ---------- footer ---------- */
+
+.site-footer {
+  margin: 40px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--surface);
+}
+
+.site-footer a {
+  margin: 0;
+}
