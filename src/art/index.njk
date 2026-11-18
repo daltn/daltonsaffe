@@ -38,7 +38,6 @@ description: Paintings and photos by Dalton Saffe.
     <li>
       <a href="/art/photos/{{ s | itemSlug }}/">
         {% img s.cover or s.photos[0].image, s.title, "(min-width: 800px) 200px, (min-width: 500px) 33vw, 100vw" %}
-        <span class="caption">{{ s.title }}{% if s.year %}, {{ s.year }}{% endif %}</span>
       </a>
     </li>
     {%- endfor %}

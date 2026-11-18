@@ -1,5 +1,9 @@
 # Photo series. Each series gets its own page at /photos/<slug>/.
 #
+# Order is by color: pale khaki/green haze -> blue -> near-black with points
+# of light -> warm light emerging -> red on teal -> full red. On desktop the
+# grid shows two per row, so entries are paired to echo each other.
+#
 # Fields:
 #   title        (required)
 #   description  optional paragraph
@@ -7,8 +11,65 @@
 #   cover        optional Cloudinary ID for the index page (defaults to the first photo)
 #   photos       list of { image, alt, caption }
 
+
+- title: "000044380016"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/000044380016.webp
+      alt: "000044380016"
+
+- title: "ambient bangers"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/0006-ambient-bangers.webp
+      alt: "ambient bangers"
+
+- title: "000052830024"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/000052830024.webp
+      alt: "000052830024"
+
+- title: "000326580004"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/000326580004.webp
+      alt: "000326580004"
+
+- title: "000326580012"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/000326580012.webp
+      alt: "000326580012"
+
+- title: "000306610030"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/000306610030.webp
+      alt: "000306610030"
+
+- title: "71560024"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/71560024.webp
+      alt: "71560024"
+
+- title: "bob n shirley"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/0027-bob-n-shirley.webp
+      alt: "bob n shirley"
+
+- title: "dripping"
+  year: 2023
+  photos:
+    - image: https://images.daltonsaffe.com/photos/0026-26-dripping-2023.webp
+      alt: "dripping"
+
+- title: "bossa hh lb33 alicia"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/0013-13-bossa-hh-lb33-alicia.webp
+      alt: "bossa hh lb33 alicia"
+
 - title: gr
   year: 2025
   photos:
-    - image: 0039_2_Large_nyqu3f
+    - image: https://images.daltonsaffe.com/photos/0039-gr.webp
       alt: gr
+
+- title: "light"
+  photos:
+    - image: https://images.daltonsaffe.com/photos/light2.webp
+      alt: "light"
