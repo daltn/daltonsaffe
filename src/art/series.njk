@@ -10,7 +10,7 @@ eleventyComputed:
   ogImage: "{{ series.cover or series.photos[0].image }}"
 ---
 <header class="series-header">
-  <h1 class="page-title">{{ series.title }}{% if series.year %}, {{ series.year }}{% endif %}</h1>
+  <h1 class="visually-hidden">{{ series.title }}{% if series.year %}, {{ series.year }}{% endif %}</h1>
   {%- if series.description %}<p>{{ series.description }}</p>{% endif %}
 </header>
 {%- for photo in series.photos %}

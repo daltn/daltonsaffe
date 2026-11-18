@@ -287,28 +287,36 @@ h2 a {
 
 /* ---------- galleries ---------- */
 
+/* Equal-height rows: every image is the same height and keeps its own
+   aspect ratio, so widths vary and rows wrap naturally. */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  align-items: flex-start;
 }
 
+
 .grid a {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   color: var(--fg);
 }
 
 .grid img {
   display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 200px;
+  width: auto;
+  max-width: calc(100vw - 32px); /* not %, which would collapse the image */
   object-fit: cover;
   background: var(--surface);
 }
 
 .grid .caption {
   display: block;
+  width: 0;
+  min-width: 100%; /* wrap to the image's width instead of widening the cell */
   margin-top: 6px;
 }
 
@@ -395,4 +403,17 @@ h2 a {
 
 .site-footer a {
   margin: 0;
+}
+
+/* Hidden on screen, still read by screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
